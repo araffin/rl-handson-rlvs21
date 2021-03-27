@@ -18,7 +18,7 @@ RL Baselines3 zoo: https://github.com/DLR-RM/rl-baselines3-zoo
 
 [Colab Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/main/rlvs_hands_on_sb3.ipynb) about getting started with SB3, Gym wrappers, callbacks, multiprocessing and hyperparameter tuning.
 
-<!-- [Solution Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/solution/rlvs_hands_on_sb3_solution.ipynb) -->
+[Solution Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/solution/rlvs_hands_on_sb3_solution.ipynb)
 
 
 ## Bonus

@@ -16,7 +16,9 @@ RL Baselines3 zoo: https://github.com/DLR-RM/rl-baselines3-zoo
 
 ## Content
 
-[Colab Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/main/rlvs_hands_on_sb3.ipynb) about getting started with SB3, Gym wrappers, callbacks, multiprocessing and hyperparameter tuning.
+This Notebook is about getting started with SB3, Gym wrappers, callbacks, multiprocessing and hyperparameter tuning.
+
+Click on the lick to open the notebook in Google Colab: [Open Colab Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/main/rlvs_hands_on_sb3.ipynb)
 
 [Solution Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/solution/rlvs_hands_on_sb3.ipynb)
 
@@ -24,3 +26,7 @@ RL Baselines3 zoo: https://github.com/DLR-RM/rl-baselines3-zoo
 ## Bonus
 
 [Optuna](https://github.com/optuna/optuna) script for automatic hyperparameter tuning.
+
+## Acknowledgments
+
+I would like to thank [Martiño](https://github.com/mcres) for helping me improving this hands-on session.

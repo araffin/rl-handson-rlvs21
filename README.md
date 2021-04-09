@@ -16,9 +16,11 @@ RL Baselines3 zoo: https://github.com/DLR-RM/rl-baselines3-zoo
 
 ## Content
 
+This Notebook is about getting started with SB3, Gym wrappers, callbacks, multiprocessing and hyperparameter tuning.
+
 Click on the lick to open the notebook in Google Colab: [Open Colab Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/main/rlvs_hands_on_sb3.ipynb)
 
-This Notebook is about getting started with SB3, Gym wrappers, callbacks, multiprocessing and hyperparameter tuning.
+[Solution Notebook](https://colab.research.google.com/github/araffin/rl-handson-rlvs21/blob/solution/rlvs_hands_on_sb3.ipynb)
 
 
 ## Bonus

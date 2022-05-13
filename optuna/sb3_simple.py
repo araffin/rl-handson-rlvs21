@@ -16,6 +16,8 @@ import torch
 import torch.nn as nn
 from stable_baselines3 import A2C
 from stable_baselines3.common.callbacks import EvalCallback
+from stable_baselines3.common.env_util import make_vec_env
+from stable_baselines3.common.vec_env import VecEnv
 
 import optuna
 from optuna.pruners import MedianPruner
@@ -23,12 +25,13 @@ from optuna.samplers import TPESampler
 from optuna.visualization import plot_optimization_history, plot_param_importances
 
 N_TRIALS = 100
-N_JOBS = 3
+N_JOBS = 1
 N_STARTUP_TRIALS = 5
 N_EVALUATIONS = 2
 N_TIMESTEPS = int(2e4)
 EVAL_FREQ = int(N_TIMESTEPS / N_EVALUATIONS)
-N_EVAL_EPISODES = 3
+N_EVAL_EPISODES = 5
+N_EVAL_ENVS = 2
 TIMEOUT = int(60 * 15)  # 15 minutes
 
 
@@ -85,7 +88,7 @@ class TrialEvalCallback(EvalCallback):
 
     def __init__(
         self,
-        eval_env: gym.Env,
+        eval_env: VecEnv,
         trial: optuna.Trial,
         n_eval_episodes: int = 5,
         eval_freq: int = 10000,
@@ -124,11 +127,11 @@ def objective(trial: optuna.Trial) -> float:
     # Create the RL model
     model = A2C(**kwargs)
     # Create env used for evaluation
-    eval_env = gym.make(ENV_ID)
+    eval_envs = make_vec_env(ENV_ID, N_EVAL_ENVS)
     # Create the callback that will periodically evaluate
     # and report the performance
     eval_callback = TrialEvalCallback(
-        eval_env,
+        eval_envs,
         trial,
         n_eval_episodes=N_EVAL_EPISODES,
         eval_freq=EVAL_FREQ,
@@ -145,7 +148,7 @@ def objective(trial: optuna.Trial) -> float:
     finally:
         # Free memory
         model.env.close()
-        eval_env.close()
+        eval_envs.close()
 
     # Tell the optimizer that the trial failed
     if nan_encountered:
